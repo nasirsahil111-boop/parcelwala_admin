@@ -62,7 +62,8 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-slate-900">
       <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl p-8">
         <div className="text-center mb-8">
-          <div className="text-3xl font-black text-orange-500 tracking-tight">PARCELWALAH</div>
+          <img src="/logo-parcelwalah.png" alt="Parcelwalah" className="mx-auto h-14 w-14" />
+          <div className="mt-3 font-display text-3xl font-bold text-orange-500 tracking-tight">PARCELWALAH</div>
           <div className="text-sm text-slate-500 mt-1">Admin Panel</div>
         </div>
 
@@ -86,7 +87,7 @@ export default function LoginPage() {
             <button
               onClick={sendOtp}
               disabled={loading || !phone.trim()}
-              className="w-full bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white font-semibold rounded-lg py-2.5 text-sm transition"
+              className="w-full bg-gradient-to-r from-orange-500 to-orange-400 hover:brightness-105 shadow-glow disabled:opacity-50 text-white font-semibold rounded-lg py-2.5 text-sm transition"
             >
               {loading ? 'Sending...' : 'Send OTP'}
             </button>
@@ -112,7 +113,7 @@ export default function LoginPage() {
             <button
               onClick={verifyOtp}
               disabled={loading || otp.length !== 6}
-              className="w-full bg-orange-500 hover:bg-orange-600 disabled:opacity-50 text-white font-semibold rounded-lg py-2.5 text-sm transition"
+              className="w-full bg-gradient-to-r from-orange-500 to-orange-400 hover:brightness-105 shadow-glow disabled:opacity-50 text-white font-semibold rounded-lg py-2.5 text-sm transition"
             >
               {loading ? 'Verifying...' : 'Login'}
             </button>
