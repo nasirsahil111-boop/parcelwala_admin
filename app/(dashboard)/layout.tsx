@@ -54,8 +54,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const Sidebar = (
     <aside className="flex flex-col w-60 bg-slate-900 text-white min-h-full">
       <div className="px-5 py-5 border-b border-slate-700">
-        <div className="text-lg font-black text-orange-400 tracking-tight">PARCELWALAH</div>
-        <div className="text-xs text-slate-400 mt-0.5">Admin Panel</div>
+        <div className="flex items-center gap-2.5">
+          <img src="/logo-parcelwalah.png" alt="Parcelwalah" className="h-9 w-9 shrink-0" />
+          <div>
+            <div className="font-display text-lg font-bold leading-none tracking-tight text-white">PARCELWALAH</div>
+            <div className="text-xs text-slate-400 mt-1">Admin Panel</div>
+          </div>
+        </div>
       </div>
 
       <nav className="flex-1 py-4 px-3 space-y-0.5">
@@ -67,7 +72,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               href={item.href}
               onClick={() => setSidebarOpen(false)}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                active ? 'bg-orange-500 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white'
+                active ? 'bg-gradient-to-r from-orange-500 to-orange-400 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white'
               }`}
             >
               <span className="text-base leading-none">{item.icon}</span>
@@ -106,7 +111,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         {/* Mobile top bar */}
         <div className="md:hidden flex items-center gap-3 px-4 py-3 bg-white border-b border-slate-200">
           <button onClick={() => setSidebarOpen(true)} className="text-slate-600 text-xl">☰</button>
-          <span className="font-bold text-orange-500">PARCELWALAH</span>
+          <img src="/logo-parcelwalah.png" alt="Parcelwalah" className="h-7 w-7" />
+          <span className="font-display font-bold text-orange-500">PARCELWALAH</span>
         </div>
         <main className="flex-1 overflow-y-auto bg-slate-50">
           {children}
